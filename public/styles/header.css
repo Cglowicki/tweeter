@@ -1,0 +1,13 @@
+header {
+  display: flex;
+  height: 400px;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: orange;
+  color: #FFFF;
+  background-image: url("https://www.transparenttextures.com/patterns/black-thread.png");
+  font-family: sans-serif;
+
+}
