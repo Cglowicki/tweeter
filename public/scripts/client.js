@@ -32,7 +32,7 @@ const data = [
 $(document).ready(function() {
 
 const createTweetElement = function (data) {
-  // $tweet, template from index.html
+  // $tweet, <article> template from index.html
   const $tweet = 
   $(`<article class="tweet">
   <header>
@@ -49,6 +49,7 @@ const renderTweets = function (data) {
   for (let info of data) {
     //loop and createTweetElement for each item in data
     const $tweet = createTweetElement(info);
+    //appends to parent container
     $('#tweet-container').append($tweet);
   }
 };
