@@ -34,3 +34,65 @@ main {
   color: #545149;
   background-color: #f4f1ec;
 }
+
+article {
+  width: 100%;
+  border: 3px solid #545149;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+article:hover {
+  box-shadow: 0 0 10px orange;
+}
+
+article.tweet header {
+  display: flex;
+  font-family: sans-serif;
+  justify-content: space-between;
+}
+
+#header-name {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+article:hover #header-name {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+#header-handle {
+  display: none;
+  padding: 10px;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+article:hover #header-handle {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+#tweet-body {
+  display: flex;
+  margin: 0 20px;
+  border-bottom: 2px solid #545149;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+article.tweet footer {
+  display: flex;
+  padding: 20px;
+  font-family: sans-serif;
+  font-size: small;
+  justify-content: flex-start;
+}
+
