@@ -40,11 +40,13 @@ article {
   border: 3px solid #545149;
   margin-top: 50px;
   margin-bottom: 10px;
-  border-radius: 10px
+  border-radius: 10px;
+  filter: blur(2px);
 }
 
 article:hover {
   box-shadow: 0 0 10px orange;
+  filter: blur(0);
 }
 
 article.tweet header {
