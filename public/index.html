@@ -45,13 +45,14 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
-      <h2>Compose Tweet</h2>
+      <div id="error">
+      <h2></h2> <!---DISPLAY ERRORS HERE-->
+      </div>
       <form action='/tweets' method='POST'>
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" class='green' id="tweet-text"></textarea>
-        <!-- 'textarea', '.green' #tweet-text, 'textarea.green#tweet-text' -->
         <div>
-          <button type="submit">Tweet</button>
+          <button type="submit" id="submit-tweet">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
 
