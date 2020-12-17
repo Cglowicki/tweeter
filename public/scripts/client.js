@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// escape funtion for nasty hackers and trolls
+// escape function for nasty hackers and trolls
 const escape = function (str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
@@ -56,12 +56,12 @@ $(document).ready(function () {
     // throw errors for form validation
     let value = $('#tweet-text').val();
     if (value.length === 0) {
-      alert('What? Nothing to tweet about?');
+      $('#error').html('What? Nothing to tweet about?');
     }
     if (value.length > 140) {
-      alert('Your song is too long...');
       return null;
     }
+    
     // post request to tweets, $tweet prepends to top of container on load
     $.ajax({ method: 'POST', url: '/tweets', data: $(this).serialize() })
       .then(() => {
