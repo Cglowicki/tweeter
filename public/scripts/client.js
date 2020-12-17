@@ -5,20 +5,12 @@
  */
 
 $(document).ready(function () {
-  
-  const loadTweets = function() {
-    // get request from server renders data into tweets
-    $.ajax('http://localhost:8080/tweets', { method: 'GET' })
-      .then(function(data) {
-        renderTweets(data);
-      });
-    };
 
   const createTweetElement = function (data) {
-    
+
     // $tweet, <article> template from index.html
     const $tweet =
-    $(`<article class="tweet">
+      $(`<article class="tweet">
     <header>
     <p id="header-name">${data.user["name"]}</p>
     <p id="header-handle">${data.user["handle"]}</p>
@@ -28,9 +20,9 @@ $(document).ready(function () {
     </article>`);
     return $tweet;
   };
-  
+
   const renderTweets = function (data) {
-    
+
     for (let info of data) {
       //loop and createTweetElement for each item in data
       const $tweet = createTweetElement(info);
@@ -39,21 +31,32 @@ $(document).ready(function () {
     }
   };
 
+  const loadTweets = function () {
+    // get request from server renders data into tweets
+    $.ajax('http://localhost:8080/tweets', { method: 'GET' })
+      .then(function (data) {
+        renderTweets(data);
+      });
+  };
+
   //override default behaviour of form
   $('form').submit(function (evt) {
-   /*  .catch((error => {
-      if ('form' === '') {
-        alert(error, 'nothing to tweet about?')
-      }
-    }); */
+
     evt.preventDefault();
+
+    // throw errors for form validation
+    let value = $('#tweet-text').val();
+    if (value.length === 0) {
+      alert('What? Nothing to tweet about?');
+    }
+    if (value.length > 140) {
+      alert('Your song is too long...');
+    }
+
     $.ajax({ method: 'POST', url: '/tweets', data: $(this).serialize() })
       .then(renderTweets(data))
   });
-  
+
   loadTweets()
 
 });
-
-
-
