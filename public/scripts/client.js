@@ -23,11 +23,13 @@ $(document).ready(function () {
 
   const renderTweets = function (data) {
 
+    $('#tweet-container').empty() // emptied so data isn't looped over again
+
     for (let info of data) {
       //loop and createTweetElement for each item in data
       const $tweet = createTweetElement(info);
       //appends to parent container
-      $('#tweet-container').append($tweet);
+      $('#tweet-container').prepend($tweet);
     }
   };
 
@@ -51,12 +53,18 @@ $(document).ready(function () {
     }
     if (value.length > 140) {
       alert('Your song is too long...');
+      return null;
     }
-
+    // post request to tweets, $tweet prepends to top of container on load
     $.ajax({ method: 'POST', url: '/tweets', data: $(this).serialize() })
-      .then(renderTweets(data))
+      .then(() => {
+        loadTweets();
+
+      });
+    // clear form and reset counter
+    this.reset();
+    $('.counter').text(140);
   });
 
-  loadTweets()
-
+  loadTweets();
 });
