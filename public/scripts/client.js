@@ -4,6 +4,13 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// escape funtion for nasty hackers and trolls
+const escape = function (str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
 $(document).ready(function () {
 
   const createTweetElement = function (data) {
@@ -15,7 +22,7 @@ $(document).ready(function () {
     <p id="header-name">${data.user["name"]}</p>
     <p id="header-handle">${data.user["handle"]}</p>
     </header>
-    <p id="tweet-body">${data.content["text"]}</p>
+    <p id="tweet-body">${escape(data.content["text"])}</p>
     <footer>${data["created_at"]}</footer>
     </article>`);
     return $tweet;
