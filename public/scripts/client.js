@@ -11,6 +11,12 @@ const escape = function (str) {
   return div.innerHTML;
 }
 
+const dateConvert = function(unix) {
+  let date = new Date(unix);
+  let fdate = date.getFullYear() + '/' + ("0" + (date.getMonth() + 1)).slice(-2) + '/' + ("0" + date.getDate()).slice(-2);
+  return fdate;
+};
+
 $(document).ready(function () {
 
   const createTweetElement = function (data) {
@@ -27,7 +33,7 @@ $(document).ready(function () {
     </header>
     <p id="tweet-body">${escape(data.content["text"])}</p>
     <footer>
-    <p>${data["created_at"]}</p>
+    <p>${dateConvert(data["created_at"])}</p>
     <div class="icons">
     <i class="fas fa-heart" id="heart"></i>
     <i class="fas fa-retweet" id="retweet"></i>
