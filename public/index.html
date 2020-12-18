@@ -10,9 +10,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     type="text/css" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap"
-    rel="stylesheet"/>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap" />
 
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -55,7 +54,7 @@
       <!---DISPLAY ERRORS HERE-->
       <div id="error">
         <!-- trouble with icon -->
-        <icon class="fas fa-exclamation-circle" id="error-icon"></icon>
+        <i class="fas fa-exclamation-circle" id="error-icon"></i>
       </div>
       <form action='/tweets' method='POST'>
         <label for="tweet-text">What are you humming about?</label>
@@ -68,13 +67,19 @@
         <div id="tweet-container">
           <article class="tweet">
             <header>
+              <i class="fas fa-crow"></i>
               <p id="header-name">🧑‍🚀 Cameron Glowicki</p>
               <p id="header-handle">@CRG</p>
 
             </header>
 
             <p id="tweet-body">Live from Outer Space!</p>
-            <footer>a moment ago...</footer>
+            <footer>
+              <i class="fas fa-flag" id="flag"></i>
+              <i class="fas fa-heart" id="heart"></i>
+              <i class="fas fa-retweet" id="retweet"></i>
+              a moment ago...
+            </footer>
           </article>
         </div>
 
