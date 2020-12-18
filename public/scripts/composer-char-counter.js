@@ -23,7 +23,7 @@ $(document).ready(function () {
       $('#error').slideDown(1000);
       $('#error').html('Your song is too long...');
     } else {
-      $('#error').slideUp(1000);
+      $('#error').slideUp(2000);
       $('#error').html(null);
     }
   })
