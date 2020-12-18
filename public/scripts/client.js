@@ -19,15 +19,20 @@ $(document).ready(function () {
     const $tweet =
       $(`<article class="tweet">
     <header>
-    <img src=${data.user["avatars"]} alt="avatar"</img>
-    <p id="header-name">${data.user["name"]}</p>
-    <p id="header-handle">${data.user["handle"]}</p>
+    <div>
+    <img src=${data.user["avatars"]} alt="avatar" class="avatar"/>
+    <p class="header-name">${data.user["name"]}</p>
+    </div>
+    <p class="header-handle">${data.user["handle"]}</p>
     </header>
     <p id="tweet-body">${escape(data.content["text"])}</p>
-    <footer>${data["created_at"]}
+    <footer>
+    <p>${data["created_at"]}</p>
+    <div class="icons">
     <i class="fas fa-heart" id="heart"></i>
     <i class="fas fa-retweet" id="retweet"></i>
     <i class="fas fa-flag" id="flag"></i>
+    </div>
     </footer>
     </article>`);
     return $tweet;
