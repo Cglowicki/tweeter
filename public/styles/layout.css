@@ -35,6 +35,22 @@ main {
   background-color: #f4f1ec;
 }
 
+/*
+ * error message styling
+ */
+
+#error {
+  padding-bottom: 20px;
+  box-sizing: border-box;
+  background-color: rosybrown;
+  color: red;
+  font-family: sans-serif;
+}
+
+/*
+ * article/tweet-container styling
+ */
+
 article {
   width: 100%;
   border: 3px solid #545149;
