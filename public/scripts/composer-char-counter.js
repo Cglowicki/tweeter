@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+  $('#error').slideUp(1);
+
   $('.new-tweet').on('keyup', 'textarea', function (evt) {
 
     //.new-tweet is parent to textarea and counter
@@ -18,8 +20,10 @@ $(document).ready(function () {
 
     // dynamic error message for length > 140
     if (this.textLength > 140) {
+      $('#error').slideDown(1000);
       $('#error').html('Your song is too long...');
     } else {
+      $('#error').slideUp(1000);
       $('#error').html(null);
     }
   })
