@@ -52,13 +52,14 @@ $(document).ready(function () {
   $('form').submit(function (evt) {
 
     evt.preventDefault();
+    
+    let value = $('#tweet-text').val();
 
     // throw errors for form validation
-    let value = $('#tweet-text').val();
     if (value.length === 0) {
       $('#error').slideDown(3000);
       $('#error').html('Nothing to sing about?');
-      $('#error').slideUp(3000);
+      $('#error').slideUp(1000);
     }
     if (value.length > 140) {
       return null;
