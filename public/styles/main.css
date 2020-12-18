@@ -1,0 +1,43 @@
+main {
+  display: flex;
+  padding-top: 20px;
+  justify-content: center;
+  width: 90%;
+  margin-right: 5%;
+  margin-left: 5%;
+  color: #545149;
+  background-color: #f4f1ec;
+}
+
+#tweet-text {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  outline: none;
+  border: 2px solid #4056A1;
+  border-radius: 10px;
+  font-family: sans-serif;
+  resize: none;
+  background-color: #f4f1ec;
+}
+
+#submit-tweet {
+  background-color: #4056A1;
+  color: white;
+  border-radius: 10px;
+  
+}
+
+/*
+ * error message styling
+ */
+
+#error {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  border: 2px solid orange;
+  color: orange;
+  background-color: #f4f1ec;
+  font-family: sans-serif;
+}
