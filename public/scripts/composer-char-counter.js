@@ -20,7 +20,7 @@ $(document).ready(function () {
 
     // dynamic error message for length > 140
     if (this.textLength > 140) {
-      $('#error').slideDown(3000);
+      $('#error').slideDown(1000);
       $('#error').html('Your song is too long...');
     } else {
       $('#error').slideUp(1000);
