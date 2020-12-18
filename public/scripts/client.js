@@ -56,7 +56,9 @@ $(document).ready(function () {
     // throw errors for form validation
     let value = $('#tweet-text').val();
     if (value.length === 0) {
-      $('#error').html('What? Nothing to tweet about?');
+      $('#error').slideDown(3000);
+      $('#error').html('Nothing to sing about?');
+      $('#error').slideUp(3000);
     }
     if (value.length > 140) {
       return null;
