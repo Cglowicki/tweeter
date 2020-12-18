@@ -9,6 +9,13 @@ $(document).ready(function () {
     let length = 140 - this.textLength;
     $(counter).text(length);
 
+    //counter red for over char limit
+    if (counter.val() < 0) {
+      counter.css({ color: "red" });
+    } else {
+      counter.css({ color: "#545149" });
+    }
+
     // dynamic error message for length > 140
     if (this.textLength > 140) {
       $('#error').html('Your song is too long...');
