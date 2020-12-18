@@ -19,11 +19,16 @@ $(document).ready(function () {
     const $tweet =
       $(`<article class="tweet">
     <header>
+    <img src=${data.user["avatars"]} alt="avatar"</img>
     <p id="header-name">${data.user["name"]}</p>
     <p id="header-handle">${data.user["handle"]}</p>
     </header>
     <p id="tweet-body">${escape(data.content["text"])}</p>
-    <footer>${data["created_at"]}</footer>
+    <footer>${data["created_at"]}
+    <i class="fas fa-heart" id="heart"></i>
+    <i class="fas fa-retweet" id="retweet"></i>
+    <i class="fas fa-flag" id="flag"></i>
+    </footer>
     </article>`);
     return $tweet;
   };
@@ -50,6 +55,7 @@ $(document).ready(function () {
 
   //override default behaviour of form
   $('form').submit(function (evt) {
+    
 
     evt.preventDefault();
     
@@ -58,8 +64,9 @@ $(document).ready(function () {
     // throw errors for form validation
     if (value.length === 0) {
       $('#error').slideDown(3000);
-      $('#error').html('Nothing to sing about?');
+      $('#error-text').html('Nothing to sing about?');
       $('#error').slideUp(1000);
+      //$('#error-text').html(null);
     }
     if (value.length > 140) {
       return null;
