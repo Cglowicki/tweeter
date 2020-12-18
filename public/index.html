@@ -19,6 +19,9 @@
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/main.css" type="text/css" />
   <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -26,15 +29,16 @@
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-  <script src="https://kit.fontawesome.com/baa69ad2ba.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
   <!-- Top nav bar (fixed) -->
   <nav>
-    <i class="fas fa-angle-double-down fa 2x"></i>
-    <p><b>write<b> a new tweet</p>
+    <div class="nav-tidbits">
+      <i class="fas fa-angle-double-down fa 2x" id="nav-arrow"></i>
+      <p>write a new tweet</p>
+    </div>
     <span>tweeter</span>
   </nav>
 
@@ -53,8 +57,8 @@
     <section class="new-tweet">
       <!---DISPLAY ERRORS HERE-->
       <div id="error">
-        <!-- trouble with icon -->
-        <i class="fas fa-exclamation-circle" id="error-icon"></i>
+        <p id="error-text"></p>
+        <i class="fa fa-exclamation-circle" id="error-icon"></i>
       </div>
       <form action='/tweets' method='POST'>
         <label for="tweet-text">What are you humming about?</label>
@@ -65,22 +69,6 @@
         </div>
 
         <div id="tweet-container">
-          <article class="tweet">
-            <header>
-              <i class="fas fa-crow"></i>
-              <p id="header-name">🧑‍🚀 Cameron Glowicki</p>
-              <p id="header-handle">@CRG</p>
-
-            </header>
-
-            <p id="tweet-body">Live from Outer Space!</p>
-            <footer>
-              <i class="fas fa-flag" id="flag"></i>
-              <i class="fas fa-heart" id="heart"></i>
-              <i class="fas fa-retweet" id="retweet"></i>
-              a moment ago...
-            </footer>
-          </article>
         </div>
 
       </form>
