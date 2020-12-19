@@ -93,7 +93,7 @@ article.tweet footer p {
 }
 
 article:hover .icons {
-  color: #4056A1;
+  color: orange;
 }
 
 .icons #flag, .icons #retweet {
