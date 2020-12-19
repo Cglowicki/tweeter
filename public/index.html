@@ -36,19 +36,19 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <div class="nav-tidbits">
-      <i class="fas fa-angle-double-down fa 2x" id="nav-arrow"></i>
-      <p>write a new tweet</p>
+      <a class="fas fa-angle-double-down fa 2x" id="nav-arrow" href="#profile-image"></a>
+      <p><b>compose</b> a tweet</p>
     </div>
     <span>tweeter</span>
   </nav>
 
   <header id="main">
     <div>
-      <img src="/images/profile-hex.png">
+      <img src="/images/profile-hex.png" id="profile-image">
     </div>
     <br>
     <div>
-      <h2>Cameron Glowicki</h2>
+      <h2 id="profile-name">Cameron Glowicki</h2>
     </div>
   </header>
 
@@ -61,7 +61,7 @@
         <i class="fa fa-exclamation-circle" id="error-icon"></i>
       </div>
       <form action='/tweets' method='POST'>
-        <label for="tweet-text">What are you humming about?</label>
+        <label for="tweet-text" id="humming">What are you humming about?</label>
         <textarea name="text" class='green' id="tweet-text"></textarea>
         <div>
           <button type="submit" id="submit-tweet">Tweet</button>
