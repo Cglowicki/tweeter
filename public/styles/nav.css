@@ -5,7 +5,6 @@ nav {
   z-index: 1;
   position: fixed;
   height: 120px;
-  background-color: #4056A1;
   color: #FFFF;
   padding: 1.5em;
   justify-content: space-between;
@@ -16,7 +15,6 @@ nav {
 
 .nav-tidbits {
   display: flex;
-  color: orange;
   flex-direction: column-reverse;
   justify-content: flex-end;
   align-items: center;
@@ -34,6 +32,26 @@ nav {
   color: #DB4D0F;
 }
 
+/* @media query */
+@media only screen and (max-width: 768px) {
+  nav {
+    background-color: orange;
+    background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
+  }
 
+  .nav-tidbits {
+    color: #FFFF;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  nav {
+    background-color: #4056A1;
+  }
+
+  .nav-tidbits {
+    color: orange;
+  }
+}
 
 
