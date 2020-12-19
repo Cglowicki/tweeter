@@ -58,10 +58,21 @@ form label {
   border-radius: 20px;
   color: white;
   background-color: orange;
+  background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
 }
 
 #error-icon {
   padding-top: 25px;
   padding-right: 5px;
   color: #4056A1;
+}
+
+/* @media query */
+
+@media only screen and (min-width: 769px) {
+  main {
+    width: 50%;
+    margin-left: 10px;
+    float: right;
+  }
 }
